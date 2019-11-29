@@ -20,9 +20,10 @@
         <input type="text" formControlName="attack" />
       </label>
     </div>
-    <button (click)="addItem()">Add Item</button>
+
     <div formArrayName="inventory">
       Inventory:
+      <button (click)="addItem()">Add Item</button>
       <div *ngFor="let item of inventory.controls; let i = index">
         <label> Item {{ i }}: </label>
         <button (click)="removeItem(i)">Remove</button>
