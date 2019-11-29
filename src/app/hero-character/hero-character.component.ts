@@ -1,6 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, FormArray } from "@angular/forms";
-import { FormBuilder } from "@angular/forms";
+import {
+  FormGroup,
+  FormControl,
+  FormArray,
+  FormBuilder,
+  Validators
+} from "@angular/forms";
 
 @Component({
   selector: "app-hero-character",
@@ -9,11 +14,11 @@ import { FormBuilder } from "@angular/forms";
 })
 export class HeroCharacterComponent implements OnInit {
   heroForm = this.fb.group({
-    name: [""],
-    class: [""],
+    name: ["", Validators.required],
+    class: ["", Validators.required],
     stats: this.fb.group({
-      hp: [""],
-      attack: [""]
+      hp: ["", Validators.required],
+      attack: ["", Validators.required]
     }),
     inventory: this.fb.array([this.fb.control("")])
   });
@@ -26,11 +31,19 @@ export class HeroCharacterComponent implements OnInit {
     return this.heroForm.get("inventory") as FormArray;
   }
 
+  get stats() {
+    return this.heroForm.get("stats") as FormGroup;
+  }
+
   addItem() {
     this.inventory.push(this.fb.control(""));
   }
 
   removeItem(index) {
     this.inventory.removeAt(index);
+  }
+
+  getStatus() {
+    return this.heroForm["controls"].stats["status"];
   }
 }

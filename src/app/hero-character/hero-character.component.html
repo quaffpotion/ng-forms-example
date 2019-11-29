@@ -1,28 +1,33 @@
 <form [formGroup]="heroForm">
-  <label>
-    First Name:
-    <input type="text" formControlName="name" />
-  </label>
-  <label>
-    Class
-    <input type="text" formControlName="class" />
-  </label>
-  <div formGroupName="stats">
+  <div>
+    Hero (Status: {{ heroForm.status }}):
     <label>
-      Hp:
-      <input type="text" formControlName="hp" />
+      First Name:
+      <input type="text" formControlName="name" />
     </label>
     <label>
-      Attack:
-      <input type="text" formControlName="attack" />
+      Class
+      <input type="text" formControlName="class" />
     </label>
-  </div>
-  <button (click)="addItem()">Add Item</button>
-  <div formArrayName="inventory">
-    <div *ngFor="let item of inventory.controls; let i = index">
-      <label> Item {{ i }}: </label>
-      <button (click)="removeItem(i)">Remove</button>
-      <input type="text" [formControlName]="i" />
+    <div formGroupName="stats">
+      Stats (Status: {{ getStatus() }}):
+      <label>
+        Hp:
+        <input type="text" formControlName="hp" />
+      </label>
+      <label>
+        Attack:
+        <input type="text" formControlName="attack" />
+      </label>
+    </div>
+    <button (click)="addItem()">Add Item</button>
+    <div formArrayName="inventory">
+      Inventory:
+      <div *ngFor="let item of inventory.controls; let i = index">
+        <label> Item {{ i }}: </label>
+        <button (click)="removeItem(i)">Remove</button>
+        <input type="text" [formControlName]="i" />
+      </div>
     </div>
   </div>
 </form>
