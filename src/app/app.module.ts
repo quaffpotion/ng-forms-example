@@ -5,9 +5,10 @@ import { AppComponent } from "./app.component";
 //Added:
 import { ReactiveFormsModule } from "@angular/forms";
 import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 @NgModule({
-  declarations: [AppComponent, NameEditorComponent],
+  declarations: [AppComponent, NameEditorComponent, ProfileEditorComponent],
   imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
