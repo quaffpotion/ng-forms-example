@@ -6,9 +6,10 @@ import { AppComponent } from "./app.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { NameEditorComponent } from './name-editor/name-editor.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { HeroCharacterComponent } from './hero-character/hero-character.component';
 
 @NgModule({
-  declarations: [AppComponent, NameEditorComponent, ProfileEditorComponent],
+  declarations: [AppComponent, NameEditorComponent, ProfileEditorComponent, HeroCharacterComponent],
   imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
