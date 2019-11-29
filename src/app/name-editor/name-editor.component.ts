@@ -8,7 +8,7 @@ import { FormControl } from "@angular/forms";
       Input Name:
       <input type="text" [formControl]="name" />
     </label>
-    <p>Name: {{ name.value }}</p>
+    <pre>Name: {{ name.value }}</pre>
     <button (click)="reset()">Reset</button>
   `,
   styleUrls: ["./name-editor.component.css"]

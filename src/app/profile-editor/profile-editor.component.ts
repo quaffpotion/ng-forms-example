@@ -18,9 +18,10 @@ import { FormGroup, FormControl } from "@angular/forms";
     </form>
     <button (click)="reset()">Reset Form</button>
     <button (click)="resetFirstName()">Reset First Name</button>
-    <p>
+    <pre>
       {{ profileForm.value | json }}
-    </p>
+    </pre
+    >
   `,
   styleUrls: ["./profile-editor.component.css"]
 })
